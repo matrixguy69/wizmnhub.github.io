@@ -21,3 +21,8 @@ localStorage.setItem('wizmn_posts',JSON.stringify(posts));
 alert('Saved anonymously (local).');
 document.getElementById('anonText').value='';
 }
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.href === window.location.href) {
+    link.style.color = 'var(--text)';
+  }
+});
