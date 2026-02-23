@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head><title>Anonymous Post</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anonymous Post</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<main class="panel">
-<h2>Post anonymously</h2>
-<textarea id="anonText" placeholder="Write freely."></textarea>
+<main class="page">
+<h1>Post anonymously</h1>
+
+<textarea id="anonText" rows="10" placeholder="Write without your name."></textarea>
 <button onclick="savePost()">Submit</button>
-<p class="muted">Stored locally for now.</p>
+
+<p class="muted">
+Posts are anonymous by default. No profiles. No metrics.
+</p>
 </main>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
