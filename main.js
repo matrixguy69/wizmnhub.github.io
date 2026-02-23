@@ -1,11 +1,23 @@
-function toggleTheme(){document.body.classList.toggle('light')}
+function toggleTheme(){
+document.body.classList.toggle('light');
+}
+
 function checkInvite(){
 const c=document.getElementById('code').value;
-document.getElementById('msg').textContent=
-c==='WIZMN-FOUNDING'?'Request received.':'Invalid code.';
+const msg=document.getElementById('msg');
+if(c==='WIZMN-FOUNDING'){
+msg.textContent='Request received. You will be contacted.';
+}else{
+msg.textContent='Invalid code.';
 }
+}
+
 function savePost(){
 const t=document.getElementById('anonText').value;
-localStorage.setItem('wizmn_post',t);
-alert('Saved locally.');
+if(!t.trim())return;
+let posts=JSON.parse(localStorage.getItem('wizmn_posts')||'[]');
+posts.push({text:t,date:Date.now()});
+localStorage.setItem('wizmn_posts',JSON.stringify(posts));
+alert('Saved anonymously (local).');
+document.getElementById('anonText').value='';
 }
